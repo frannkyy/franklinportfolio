@@ -1,0 +1,102 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import TimeLineElement from "../components/cv/TimeLine.astro";
+---
+
+<BaseLayout title="Social Media Manager Projects" sideBarActiveItemID="projects">
+
+    <style>
+        .gallery-container {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+        }
+        .gallery-item {
+          flex: 0 0 30%;
+          margin-bottom: 20px;
+        }
+        .gallery-item img {
+          width: 100%;
+          height: auto;
+          cursor: pointer;
+        }
+        .modal {
+          display: none;
+          position: fixed;
+          z-index: 1;
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 100%;
+          overflow: auto;
+          background-color: rgba(0, 0, 0, 0.9);
+        }
+        .modal-content {
+          margin: auto;
+          display: block;
+          width: 80%;
+          max-width: 800px;
+        }
+      </style>
+    
+  <div class="mb-5">
+    <div class="text-3xl w-full font-bold">Creative Video Ads</div>
+  </div>
+
+  <div class="mb-10 text-justify">
+    Here are the units I fixed during my work as a Support Engineer or technician. There more units that I fixed, I only put here some of the units I repaired.
+  </div>
+
+  <div class="mb-5">
+    <div class="text-3xl w-full font-bold">Repaired Units</div>
+  </div>
+
+  <!-- Gallery Container -->
+  <div class="gallery-container">
+    <!-- Image 1 -->
+    <div class="gallery-item">
+      <img src="support/img1.png" alt="Image 1" onclick="openModal('support/img1.png')" />
+    </div>
+    <!-- Image 2 -->
+    <div class="gallery-item">
+      <img src="support/img2.png" alt="Image 2" onclick="openModal('support/img2.png')" />
+    </div>
+    <!-- Image 3 -->
+    <div class="gallery-item">
+      <img src="support/img3.png" alt="Image 3" onclick="openModal('support/img3.png')" />
+    </div>
+  <!-- Image 4 -->
+  <div class="gallery-item">
+    <img src="support/img4.png" alt="Image 2" onclick="openModal('support/img4.png')" />
+  </div>
+  <!-- Image 5 -->
+  <div class="gallery-item">
+    <img src="support/img5.png" alt="Image 3" onclick="openModal('support/img5.png')" />
+  </div>
+   <!-- Image 6 -->
+   <div class="gallery-item">
+    <img src="support/img6.png" alt="Image 2" onclick="openModal('support/img6.png')" />
+  </div>
+  
+
+
+  <script>
+    function openModal(imageSrc) {
+      var modal = document.getElementById("modal");
+      var modalImg = document.getElementById("modal-img");
+      if (modal && modalImg) {
+        modal.style.display = "block";
+        modalImg.src = imageSrc;
+      }
+    }
+  
+    window.onclick = function(event) {
+      var modal = document.getElementById("modal");
+      if (modal && event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+  </script>
+  
+
+</BaseLayout>
